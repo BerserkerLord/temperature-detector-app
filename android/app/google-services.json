@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "135195132984",
+    "firebase_url": "https://temperature-detector-36e8f-default-rtdb.firebaseio.com",
+    "project_id": "temperature-detector-36e8f",
+    "storage_bucket": "temperature-detector-36e8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135195132984:android:854625abbd8815ef7a52cd",
+        "android_client_info": {
+          "package_name": "com.example.temperature_detector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135195132984-fpdc0h5db562c427eiep31pgjsqun878.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAszRvpddUjJX5HgcIepKdpxPd82f3QIEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135195132984-fpdc0h5db562c427eiep31pgjsqun878.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
