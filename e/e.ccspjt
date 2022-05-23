@@ -1,0 +1,28 @@
+[PROJECT]
+Target=e.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.076
+Compiler=PCH
+[Target Data]
+FileList=e.c
+[e.c]
+Type=4
+[mru-list]
+1=e.c
+[Units]
+Count=1
+1=e (main)
+
+[defines]
+buildcount=11
+
+[ProjectLog]
+Days=1
+D1=21-05-2022
+D1_L=2
+D1_L1=[59372]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D1_E=5
+D1_D=0
+D1_L2=[66013]Project Closed.

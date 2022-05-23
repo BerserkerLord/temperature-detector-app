@@ -1,0 +1,9 @@
+Compiling C:\Users\zdari\Documents\e\e on 21-may.-22 at 16:24
+>>> Warning 203 "C:\Program Files (x86)\PICC\Drivers\pic18_usb.c" Line 727(1,1): Condition always TRUE
+>>> Warning 216 "e.c" Line 103(1,2): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "e.c" Line 103(1,2): Interrupts disabled during call to prevent re-entrancy:  (usb_cdc_flush_tx_buffer)
+>>> Warning 216 "e.c" Line 103(1,2): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "e.c" Line 103(1,2): Interrupts disabled during call to prevent re-entrancy:  (usb_cdc_init)
+      Memory usage:   ROM=21%      RAM=26% - 28%
+      0 Errors,  5 Warnings.
+Build Successful.
