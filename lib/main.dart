@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -39,6 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Gestor de Temperatura"),
+      ),
       backgroundColor: Colors.white,
       body: StreamBuilder(
         stream: FirebaseDatabase.instance.ref("PIC_DEVICE").onValue,
@@ -50,53 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.only(top: 20, right: 20, left: 20),
                     child: SfRadialGauge(
                       axes: <RadialAxis>[
-                        RadialAxis(
-                          backgroundImage:const AssetImage('assets/light_frame.png'),
-                          minimum: -50,
-                          maximum: 50,
-                          interval: 10,
-                          radiusFactor: 0.5,
-                          showAxisLine: false,
-                          labelOffset: 5,
-                          useRangeColorForAxis: true,
-                          axisLabelStyle: GaugeTextStyle(fontWeight: FontWeight.bold),
-                          ranges: <GaugeRange>[
-                            GaugeRange(
-                                startValue: -50,
-                                endValue: -20,
-                                sizeUnit: GaugeSizeUnit.factor,
-                                color: Colors.green,
-                                endWidth: 0.03,
-                                startWidth: 0.03),
-                            GaugeRange(
-                                startValue: -20,
-                                endValue: 20,
-                                sizeUnit: GaugeSizeUnit.factor,
-                                color: Colors.yellow,
-                                endWidth: 0.03,
-                                startWidth: 0.03),
-                            GaugeRange(
-                                startValue: 20,
-                                endValue: 50,
-                                sizeUnit: GaugeSizeUnit.factor,
-                                color: Colors.red,
-                                endWidth: 0.03,
-                                startWidth: 0.03),
-                          ],
-                          annotations: <GaugeAnnotation>[
-                            GaugeAnnotation(
-                                widget: Text(
-                                  '°C',
-                                  style:
-                                  TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                                ),
-                                positionFactor: 0.8,
-                                angle: 90)
-                          ],
-                        ),
                         RadialAxis(
 
                           ticksPosition: ElementsPosition.outside,
@@ -160,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           annotations: <GaugeAnnotation>[
                             GaugeAnnotation(
                                 widget: Text(
-                                  '°F',
+                                  '${databaseSnapshot.child("temp").child("data").value} °C',
                                   style:
                                   TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                                 ),
@@ -170,9 +126,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
+
                   ),
                 ),
-                SizedBox(height: 50),
                 TextButton(onPressed: (){
                   if(databaseSnapshot.child("on").child("data").value == 0){
                     FirebaseDatabase.instance.ref("PIC_DEVICE/on/data").set(1);
